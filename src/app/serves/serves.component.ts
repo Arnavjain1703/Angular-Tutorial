@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: '.app-serves',
-  template: `<app-server></app-server>
-  <app-server></app-server> `,
+  templateUrl:'./serves.component.html',
   styles: []
 })
-export class ServesComponent implements OnInit {
-
-  constructor() { }
+export class ServesComponent implements OnInit{
+  hellow=false;
+  constructor() { 
+   setTimeout (()=> {
+     this.hellow = true;
+   },2000);
+  }
 
   ngOnInit() {
   }
