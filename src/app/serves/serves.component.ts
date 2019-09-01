@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServesComponent implements OnInit{
   hellow=false;
+  servesstatus='no server';
   constructor() { 
    setTimeout (()=> {
      this.hellow = true;
@@ -14,6 +15,10 @@ export class ServesComponent implements OnInit{
   }
 
   ngOnInit() {
+  }
+  servesCreated()
+  {
+    this.servesstatus='servescreated';
   }
 
 }
