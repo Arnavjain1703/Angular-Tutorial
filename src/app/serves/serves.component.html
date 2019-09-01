@@ -1,9 +1,13 @@
 <label>user input</label>
 <input type="text" class="form-control" (input)="onserverupdate($event)">
+<!-- <input type="text" class="form-control" [(ngModule)]="servesName"> -->
 
-<p>{{servesName}}</p>
+<p> {{servesName}}</p>
 <button class="btn btn-success" [disabled]=!hellow (click)="servesCreated()">click</button>
 
 <app-server></app-server>
 <app-server></app-server>
-<p>{{servesstatus}}</p>
+<p *ngIf="servesP;else noServes">hye server is created{{servesName}}</p>
+<ng-template #noServes>
+<p>hey no serves</p>
+</ng-template>
