@@ -14,8 +14,8 @@ export class RecipeService{
         ]),
         new Recipe('A test Recipe','this is simple test,','http://foodtalk4you.com/wp-content/uploads/2017/01/Recipes-Banner.jpg',[
             
-            new Ingredient ('tikki' ,10),
-            new Ingredient ('paneer',2)
+            new Ingredient ('tikki2' ,10),
+            new Ingredient ('paneer2',2)
   
         ]),
       ];  
