@@ -46,10 +46,17 @@ onAddItem(form :NgForm)
   else{
     this.slService.addIngredient(newIngredient);
   }
+  this.editMode=false;
+  form.reset();
   // this.ingredientAdded.emit(newIngredient); 
   //  this.slService.addIngredient(newIngredient);
 }
 ngOnDestroy(){
   this.subscription.unsubscribe();
+}
+onClear()
+{
+  this.slForm.reset();
+  this.editMode=false;
 }
 }
