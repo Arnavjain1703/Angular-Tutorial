@@ -38,6 +38,9 @@ this.subscription=this.slService.ingredientsChanged
   {
     this.subscription.unsubscribe();
   }
-
+onEditItem(index:number)
+{
+this.slService.startedEditing.next(index);
+}
 }
  
