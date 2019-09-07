@@ -1,11 +1,11 @@
 import {Recipe} from './recipe.model'
-import { EventEmitter, Injectable } from '@angular/core';
+import {  Injectable } from '@angular/core';
 import { Ingredient } from '../shared/Ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
  @Injectable ()
 export class RecipeService{
-    recipeSelected=new EventEmitter<Recipe>();
+    // recipeSelected=new EventEmitter<Recipe>();
    private  recipes:Recipe[]=[
         new Recipe('A test Recipe','this is simple test,','http://foodtalk4you.com/wp-content/uploads/2017/01/Recipes-Banner.jpg',[
             new Ingredient ('tikki' ,10),
