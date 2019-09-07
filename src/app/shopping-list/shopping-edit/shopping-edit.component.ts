@@ -41,6 +41,7 @@ onAddItem(form :NgForm)
   if(this.editMode)
   {
     this.slService.updateIngredient(this.editedItemIndex,newIngredient)
+  
     
   }
   else{
@@ -58,5 +59,10 @@ onClear()
 {
   this.slForm.reset();
   this.editMode=false;
+}
+onDelete()
+{
+this.onClear();
+this.slService.deleteIngredient(this.editedItemIndex);
 }
 }
