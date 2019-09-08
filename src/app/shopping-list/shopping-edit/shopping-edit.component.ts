@@ -53,7 +53,7 @@ onAddItem(form :NgForm)
   //  this.slService.addIngredient(newIngredient);
 }
 ngOnDestroy(){
-  this.subscription.unsubscribe();
+  // this.subscription.unsubscribe();
 }
 onClear()
 {

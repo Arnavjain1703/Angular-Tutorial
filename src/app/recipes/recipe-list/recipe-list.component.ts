@@ -16,11 +16,14 @@ recipes:Recipe[];
                 private route :ActivatedRoute) { }
 
   ngOnInit() {
+    this.recipeService.recipesChanged.subscribe(
+      (recipes:Recipe[]) =>{
+           this.recipes=recipes
+      }
+    );
     this.recipes=this.recipeService.getRecipes();
   }
-  // onRecipeSelected(recipe:Recipe){
-  //      this.recipeWasSelected.emit(recipe);
-  // }
+  
   onNewRecipe(){
     this.router.navigate(['/recipes','new']) ;
   }

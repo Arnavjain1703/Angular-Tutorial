@@ -2,9 +2,12 @@ import {Recipe} from './recipe.model'
 import {  Injectable } from '@angular/core';
 import { Ingredient } from '../shared/Ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
+import { Subject } from 'rxjs';
+
 
  @Injectable ()
 export class RecipeService{
+    recipesChanged=new Subject<Recipe[]>();
     // recipeSelected=new EventEmitter<Recipe>();
    private  recipes:Recipe[]=[
         new Recipe('A test Recipe','this is simple test,','http://foodtalk4you.com/wp-content/uploads/2017/01/Recipes-Banner.jpg',[
@@ -31,5 +34,15 @@ export class RecipeService{
       getRecipe(index:number)
 {
      return this.recipes.slice()[index];
+}
+addRecipe(recipe:Recipe){
+this.recipes.push(recipe);
+this.recipesChanged.next(this.recipes.slice())
+}
+updateRecipe(index:number,newRecipe:Recipe)
+{
+this.recipes[index]=newRecipe;
+this.recipesChanged.next(this.recipes.slice())
+
 }
 }
